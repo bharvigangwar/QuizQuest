@@ -1,43 +1,184 @@
+
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: #333;
-}
-
-.container {
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+    padding: 50px;
     text-align: center;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+
 .question {
-    margin: 20px 0;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.question h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
-    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #218838;
+label:hover {
+    background-color: #fceba1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.results {
-    margin-top: 30px;
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
+
+.option-image {
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+figcaption {
+    font-size: 16px;
+    color: #555;
+}
+
+
+#submitBtn {
+    background-color: #ff6347;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#submitBtn:hover {
+    background-color: #e5533d;
+    transform: scale(1.1);
+}
+
+button:focus {
+    outline: none;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#modal h2 {
+    font-size: 28px;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+#resultContent {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.close {
+    font-size: 24px;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Modal Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .question {
+        margin-bottom: 15px;
+    }
+
+    label {
+        width: 180px;
+    }
+
+    .option-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    #submitBtn {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
 }
